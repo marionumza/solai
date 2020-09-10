@@ -1,0 +1,64 @@
+#wrap{
+
+    .btn-primary, .btn-alpha{
+        overflow: hidden;
+        position: sticky;
+        border: 1px solid theme-color('primary');
+        color: theme-color('primary');
+        background: transparent;
+    }
+
+    .btn-secondary, .btn-beta{
+        border: 1px solid theme-color('secondary');
+    }
+
+    .btn-primary:hover, .btn-alpha:hover{
+        color: #fff;
+    }
+
+    #product_pager_top .btn, #product_pager_top .btn, {
+        border: 1px solid #ededed !important;
+    }
+
+    .btn-primary:after, .btn-alpha:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: theme-color('primary');
+            color: #fff;
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+            -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+    }
+
+    .btn-primary:hover:after, .btn-alpha:hover:after {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+
+    .btn-primary:focus,.btn-alpha:focus, .btn-primary:active, .btn-alpha:active{
+        box-shadow: none;
+    }
+
+    .btn-primary.btn-sm:hover:after, .btn-primary.btn-link:hover:after{
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+    }
+
+    .btn-primary.btn-sm:hover, .btn-primary.btn-link:hover{
+        color: unset;
+    }
+}
