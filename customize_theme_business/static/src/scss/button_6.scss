@@ -1,0 +1,46 @@
+#wrap{
+
+    .btn-primary, .btn-alpha{
+        position: relative;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+    }
+
+    .btn-primary:before, .btn-alpha:before {
+        content: '';
+        position: absolute;
+        border: white solid 2px;
+        border-radius: 0.25rem;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        opacity: 0;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+    }
+
+    .btn-primary:focus,.btn-alpha:focus, .btn-primary:active, .btn-alpha:active{
+        box-shadow: none;
+    }
+
+    .btn-primary:hover:before, .btn-alpha:hover:before {
+        opacity: 1;
+    }
+
+    .btn-primary.btn-sm:hover:before, .btn-primary.btn-link:hover:before {
+        opacity: 0;
+    }
+
+    .rounded-circle:before{
+        border-radius:100px;
+    }
+
+    .flat:before{
+        border-radius:0;
+    }
+}
