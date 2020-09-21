@@ -1,0 +1,63 @@
+#wrap{
+
+    .btn-primary, .btn-alpha{
+        background: theme-color('primary');
+        border: none !important;
+        /* border-radius: 0.25em; */
+        -webkit-transition: all 0.7s ease;
+        transition: all 0.7s ease;
+        position: relative;
+    }
+
+    .btn-primary:before, .btn-alpha:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 0px;
+        height: 3px;
+        background: theme-color('primary');
+        transition: all 0.4s ease;
+    }
+
+    .btn-primary:after, .btn-alpha:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 0px;
+        height: 3px;
+        background: theme-color('primary');
+        transition: all 0.4s ease;
+        top: inherit;
+        left: inherit;
+        bottom: 0;
+        right: 0;
+    }
+
+    .btn-primary:hover, .btn-alpha:hover {
+        background: transparent;
+        color: theme-color('primary');
+    }
+
+    .btn-primary:focus,.btn-alpha:focus, .btn-primary:active, .btn-alpha:active{
+        box-shadow: none;
+    }
+
+    .btn-primary:hover:before, .btn-alpha:hover:before, .btn-primary:hover:after, .btn-alpha:hover:after {
+        -webkit-transition: all 0.7s ease;
+        transition: all 0.7s ease;
+        width: 100%;
+    }
+
+    .btn-primary.btn-sm:hover:before, .btn-primary.btn-link:hover:before{
+        -webkit-transition: unset;
+        transition: unset;
+        width:0px;
+    }
+
+    .btn-primary.btn-sm:hover, .btn-primary.btn-link:hover{
+        background: theme-color('primary');
+        color: unset;
+    }
+}

@@ -1,0 +1,27 @@
+#wrap{
+
+    .btn-primary, .btn-alpha{
+        border: 4px double theme-color('primary');
+        background: theme-color('primary');
+
+    }
+
+    .btn-primary:hover, .btn-alpha:hover, .btn-primary:focus,.btn-alpha:focus, .btn-primary:active, .btn-alpha:active{
+        background: transparent;
+        color: theme-color('primary');
+        box-shadow: none;
+    }
+
+    .btn-secondary, .btn-beta{
+        border: 4px double theme-color('secondary');
+    }
+
+    .btn-primary.btn-sm:hover, .btn-primary.btn-link:hover{
+        background: theme-color('primary');
+        color: unset;
+    }
+
+    #product_pager_top .btn, #product_pager_top .btn, {
+        border: 1px solid #ededed !important;
+    }
+}
