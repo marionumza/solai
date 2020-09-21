@@ -1,0 +1,59 @@
+#wrap{
+    .btn-primary, .btn-alpha{
+        background: transparent;
+        color:theme-color('primary');
+        border: 1px solid theme-color('primary') !important;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        position: sticky;
+        overflow: hidden;
+    }
+
+    .btn-secondary, .btn-beta{
+        border: 1px solid theme-color('secondary');
+    }
+
+    #product_pager_top .btn, #product_pager_top .btn, {
+        border: 1px solid #ededed !important;
+    }
+
+    .btn-primary:hover, .btn-alpha:hover{
+        color: #fff;
+    }
+
+    .btn-primary:focus,.btn-alpha:focus, .btn-primary:active, .btn-alpha:active{
+        box-shadow: none;
+    }
+
+    .btn-primary:after, .btn-alpha:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: -1;
+        //opacity: 0;
+        background-color: theme-color('primary');
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .btn-primary:hover:after, .btn-alpha:hover:after{
+        //opacity: 1;
+        width: 100%;
+    }
+
+    .btn-primary.btn-sm:hover:after, .btn-primary.btn-link:hover:after{
+        width: 0;
+    }
+
+    .btn-primary.btn-sm:hover, .btn-primary.btn-link:hover{
+        color: unset;
+    }
+
+}

@@ -1,0 +1,25 @@
+#wrap{
+    .btn-primary, .btn-alpha{
+        background: theme-color('primary');
+        border: 1px solid theme-color('primary');
+    }
+
+    .btn-secondary, .btn-beta{
+        border: 1px solid theme-color('secondary');
+    }
+
+    .btn-primary:hover, .btn-alpha:hover, .btn-primary:focus,.btn-alpha:focus, .btn-primary:active, .btn-alpha:active{
+        background: transparent;
+        color: theme-color('primary');
+        box-shadow: none;
+    }
+
+    #product_pager_top .btn, #product_pager_top .btn, {
+        border: 1px solid #ededed !important;
+    }
+
+    .btn-primary.btn-sm:hover, .btn-primary.btn-link:hover{
+        background: theme-color('primary');
+        color: unset;
+    }
+}
