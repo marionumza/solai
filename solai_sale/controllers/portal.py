@@ -38,7 +38,7 @@ class CustomerPortal(CustomerPortal):
         partner = request.env.user.partner_id
         SaleOrder = request.env['sale.order']
 
-        domain = [('state', 'in', ['sent', 'cancel']),'|'
+        domain = [('state', 'in', ['sent', 'cancel']), '|',
             ('message_partner_ids', 'child_of', [partner.commercial_partner_id.id]),
                   ('installer_id', '=', request.env.user.id)
         ]
