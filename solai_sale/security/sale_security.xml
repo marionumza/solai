@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <!-- Portal Access Rules -->
     <!--record id="sale.sale_order_rule_portal" model="ir.rule">
         <field name="name">Portal Personal Quotations/Sales Orders</field>
