@@ -21,4 +21,16 @@
             </p>
         </field>
     </record>
+
+    <record id="view_task_kanban_solai_inherit" model="ir.ui.view">
+        <field name="name">project.task.kanban.inherit</field>
+        <field name="model">project.task</field>
+         <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+             <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/div[3]/div[1]/field[@name='activity_ids']" position="after">
+                <field name="subtask_count" bold="1"/>
+                <!--field display="full" name="subtask_effective_hours" attrs="{}" invisible="1"/-->
+            </xpath>
+        </field>
+    </record>
 </odoo>
