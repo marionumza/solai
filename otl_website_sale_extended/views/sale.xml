@@ -6,7 +6,13 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook//page[@name='customer_signature']" position="after">
                 <page name="checkout_images" string="Images">
-                        <field name="image_ids" nolabel="1" style="margin-top:20px;margin-left:5px;" mode="kanban">
+                        <field name="image_ids" nolabel="1">
+                            <tree>
+                                <field name="document_binary"/>
+                                <field name="file_name"/>
+                            </tree>
+                        </field>
+                        <!--field name="image_ids" nolabel="1" style="margin-top:20px;margin-left:5px;" mode="kanban">
                             <kanban>
                                 <field name="id"/>
                                 <field name="document_binary"/>
@@ -25,15 +31,15 @@
                                         </div>
                                     </t>
                                 </templates>
-                            </kanban>
-                            <form>
+                            </kanban-->
+                            <!--form>
                                 <group col="4">
                                     <field name="document_binary" widget='image' filename="file_name" class="oe_avatar"
                                            options='{"preview_image":"document_binary"}'/>
                                     <field name="file_name" invisible="1"/>
                                 </group>
                             </form>
-                        </field>
+                        </field-->
                     </page>
                 
             </xpath>

@@ -4,7 +4,7 @@ var myDropzoneOptions = {
     maxFilesize: 4,
     maxFiles: 1,
     addRemoveLinks: true,
-    acceptedFiles: 'image/*'
+    acceptedFiles: 'image/*, .pdf'
 }
 
 

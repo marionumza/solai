@@ -1,5 +1,5 @@
 <odoo>
-    <template id="file_upload_products_checkout" name="Upload Images">
+    <template id="file_upload_products_checkout" name="Upload Files">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="oe_structure">
