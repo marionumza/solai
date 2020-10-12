@@ -4,7 +4,7 @@ class DocumentLine(models.Model):
     _name = 'document.line'
     _description = "Documents"
 
-    document_binary = fields.Binary(string="Attachment", attachment=True)
+    document_binary = fields.Binary(string="File Attachment", attachment=True)
     file_name = fields.Char('File Name')
     sale_id = fields.Many2one('sale.order')
     attachment_id = fields.Many2one('ir.attachment')
