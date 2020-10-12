@@ -1,0 +1,42 @@
+<odoo>
+    <record id="sale_order_form_inherited" model="ir.ui.view">
+        <field name="name">sale.order.form.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='customer_signature']" position="after">
+                <page name="checkout_images" string="Images">
+                        <field name="image_ids" nolabel="1" style="margin-top:20px;margin-left:5px;" mode="kanban">
+                            <kanban>
+                                <field name="id"/>
+                                <field name="document_binary"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div style="width:15%!important;border:none!important;" class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                            <div t-if="record.document_binary.raw_value"
+                                                 class="o_kanban_image_fill_left d-none d-md-block"
+                                                 t-attf-style="background-image: url(#{kanban_image('document.line', 'document_binary', record.id.raw_value)})"
+                                                 role="img"/>
+
+                                            <div t-if="record.document_binary.raw_value"
+                                                 class="o_kanban_image d-md-none rounded-circle"
+                                                 t-attf-style="background-image: url(#{kanban_image('document.line', 'image_small', record.id.raw_value)})"
+                                                 role="img"/>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                            <form>
+                                <group col="4">
+                                    <field name="document_binary" widget='image' filename="file_name" class="oe_avatar"
+                                           options='{"preview_image":"document_binary"}'/>
+                                    <field name="file_name" invisible="1"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                
+            </xpath>
+        </field>
+    </record>
+</odoo>

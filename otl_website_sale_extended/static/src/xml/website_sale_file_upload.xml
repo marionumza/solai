@@ -1,0 +1,65 @@
+<odoo>
+    <template id="file_upload_products_checkout" name="Upload Images">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="uploadfile_content" id="file_upload">
+                        <section>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <t t-call="website_sale.wizard_checkout">
+                                            <t t-set="step" t-value="15" />
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="uploadfile_main_content">
+                                    <div class="upload_btn_parent">
+                                        <form action="/shop/checkout" id="shop_products_checkout" method="post" class="d-none">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                            <input type="text" name="express" t-att-value="express" id="express" />
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+
+                                        <form action="/file-upload" class="dropzone" id="dropzone-products-checkout">
+                                            <div class="dz-message" style="padding-top:35px;">
+                                                <span class="title_p">
+                                                    Drag and drop or Upload images here.
+                                                </span>
+                                            </div>
+                                            <input type="file" name="file" id="uploadfile" />
+                                            <input type="hidden" name="sale_id" t-att-value="sale_id" id="sale_id" />
+                                            <input type="hidden" name="edit" t-att-value="edit" id="edit" />
+                                            <input type="hidden" name="file_count" t-att-value="file_count" id="file_count" />
+                                        </form>
+                                        <div class="row">
+                                            <div id="no_files" class="row d-none" style="color:red;">
+                                                <p>
+                                                    You need to upload atleast one.
+                                                </p>
+                                            </div>
+                                            <div id="file_count_validation" class="row d-none" style="color:red;">
+                                                <p>
+                                                    You can upload only 5 images.
+                                                </p>
+                                            </div>
+                                            <div id="wrong_files" class="row d-none" style="color:red;">
+                                                <p>
+                                                    You can't upload files of this type.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <button type="button" class="btn btn-primary upload_btn_w">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
