@@ -1,0 +1,114 @@
+.uploadfile_content{
+  background-color: #f7f7f6;
+  padding: 55px 0 85px 0;
+}
+#uploadfile{
+    display: none;
+}
+#file_count_validation, #wrong_files, #no_files {
+    display: block;
+    margin: 15px auto;
+}
+.uploadfile_main_content{
+    padding: 0 0;
+    margin: 20px 0;
+    border-radius: 5px;
+    position:relative;
+}
+.uploadfile_main_content,.upload_btn_parent{
+    width: 100%;
+    text-align: center;
+    
+}
+.title_p {
+  font-family: 'Montserrat',sans-serif!important;
+  font-size: 25px;
+}
+
+.upload_btn_w {
+  margin: 20px auto;
+  display: block;
+  text-transform: uppercase;
+  padding: 10px 40px;
+}
+.upload_btn_w:hover {
+  background-color: #adc52bde !important;
+}
+
+@media (min-width: 768px){
+    .progress-wizard .progress-wizard-step {
+        margin-top: 0.8125rem;
+        float: left;
+        width: 25%;
+    }    
+}
+
+
+/*dropzone based css*/
+
+.dropzone {
+    min-height: 150px;
+    background: white;
+    padding: 20px 20px;
+    width: 70%;
+    margin: 0 auto;
+    border: 2px dashed;
+    border-radius: 15px;
+    border-color: #bdbdbd;
+}
+.dropzone .dz-default.dz-message {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    background-image: none !important;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: absolute;
+    width: 428px;
+    height: 123px;
+    margin-left: -214px;
+    margin-top: -61.5px;
+    top: 50%;
+    left: 50%;
+}
+.dz-remove {
+    border: none!important;
+    padding-top: 10px !important;
+    background-image:none !important;
+    color: #d00808 !important;
+    background-color:none !important
+    padding-bottom: 10px !important;
+}
+.dropzone .dz-preview .dz-details .dz-size, .dropzone-previews .dz-preview .dz-details .dz-size{
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+
+
+}
+.dropzone .dz-preview {
+    background-color: #eee !important;
+    border: none !important;
+    border-radius: 10px;
+}
+.
+.dropzone .dz-preview .dz-details{
+    width: 100% !important;
+    text-align: center !important;
+    padding: 17px !important;
+    background: #eee !important;
+}
+.dz-size {
+    display:none;
+}
+.dropzone a.dz-remove, .dropzone-previews a.dz-remove {
+    margin-top: -25px;
+}
+.dz-preview .dz-image-preview {
+    background-color: #ffffff!important;
+}
