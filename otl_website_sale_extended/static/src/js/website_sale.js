@@ -4,7 +4,7 @@ var myDropzoneOptions = {
     maxFilesize: 4,
     maxFiles: 1,
     addRemoveLinks: true,
-    acceptedFiles: 'image/*, .pdf'
+    acceptedFiles: 'image/*, .pdf, , .PDF'
 }
 
 
@@ -28,7 +28,9 @@ $(document).ready(function() {
                     _.each(response.images, function(x) {
                         var mockFile = {name: x[0],serverID:x[1] };
                         fileuploadDropzone.emit("addedfile", mockFile);
-                        fileuploadDropzone.emit("thumbnail", mockFile, x[2]);
+                        if (x[2]){
+                            fileuploadDropzone.emit("thumbnail", mockFile, x[2]);
+                        }
                         fileuploadDropzone.emit("complete", mockFile);
                     });
                     $('#edit').val("");

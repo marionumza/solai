@@ -18,13 +18,14 @@
                                         <form action="/shop/checkout" id="shop_products_checkout" method="post" class="d-none">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                             <input type="text" name="express" t-att-value="express" id="express" />
+                                            <input type="text" id="proceed_without_images" name="proceed_without_images" value="1" />
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
 
                                         <form action="/file-upload" class="dropzone" id="dropzone-products-checkout">
                                             <div class="dz-message" style="padding-top:35px;">
                                                 <span class="title_p">
-                                                    Drag and drop or Upload images here.
+                                                    Drag and drop or Upload images/pdf here.
                                                 </span>
                                             </div>
                                             <input type="file" name="file" id="uploadfile" />

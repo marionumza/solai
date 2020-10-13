@@ -15,7 +15,7 @@ class WebsiteSale(WebsiteSale):
     @http.route(['/shop/checkout'], type='http', auth="public", website=True, sitemap=False)
     def checkout(self, **post):
         order = request.website.sale_get_order()
-        if order.image_ids:
+        if order.image_ids or post.get('proceed_without_images',False):
             redirection = self.checkout_redirection(order)
             if redirection:
                 return redirection
@@ -70,7 +70,7 @@ class WebsiteSale(WebsiteSale):
     # calls when removing a file
     @http.route(['/remove/file/<image_id>'], type='http', auth="public", website=True, csrf=False)
     def render_remove_file(self, image_id, **kw):
-        if image_id:
+        if image_id and image_id != 'undefined':
             image = request.env['document.line'].sudo().search([('id','=',int(image_id))])
             if image:
                 image.attachment_id.unlink()
@@ -87,12 +87,13 @@ class WebsiteSale(WebsiteSale):
                 if image.attachment_id:
                     if not image.attachment_id.access_token:
                         image.attachment_id.generate_access_token()
+                    url = '/web/image/%s?access_token=%s'%(image.attachment_id.id,image.attachment_id.access_token)
+                    if image.attachment_id.sudo().mimetype == 'application/pdf':
+                        url = ''
                     images.append((
-                        image.file_name or 'Attachment',
-                        image.id,
-                        '/web/image/%s?access_token=%s'%(image.attachment_id.id,image.attachment_id.access_token)
-                        ))
+                        image.file_name or 'Attachment',image.id,url))
         result['images'] = images
+        _logger.info(result)
         return json.dumps(result)
 
     @http.route(['/shop/upload/images'], type='http', methods=['GET', 'POST'], auth="public", website=True, sitemap=False)

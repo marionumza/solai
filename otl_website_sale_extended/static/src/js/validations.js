@@ -22,14 +22,15 @@ odoo.define('otl_website_sale_extended.validations', function(require) {
     }
 
     $(".upload_btn_w").click(function(){
-        var count = $('#file_count').val();
-        if (count == 0 || count == ''){
-            $('#no_files').removeClass('d-none');
-        }
-        else{
-            $('#no_files').addClass('d-none');
-            $("#shop_products_checkout").submit();    
-        }
+        $("#shop_products_checkout").submit();
+        // var count = $('#file_count').val();
+        // if (count == 0 || count == ''){
+        //     $('#no_files').removeClass('d-none');
+        // }
+        // else{
+        //     $('#no_files').addClass('d-none');
+        //     $("#shop_products_checkout").submit();
+        // }
     });  
 
 });
