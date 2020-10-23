@@ -125,7 +125,7 @@ class import_so:
             so_vals = {
                 'name': order_no,
                 'date_order': order_date.isoformat(),
-                #'note': amount,
+                'note': amount,
                 'partner_id': customer_id
             }
             if customer_id:
