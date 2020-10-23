@@ -1,7 +1,7 @@
 
 import csv
 #import xmlrpclib
-from xmlrpc import client as xmlrpclib
+import xmlrpc.client
 # import time
 import sys
 #sys.path.append('/Users/shelton/PycharmProjects/OdooGIT/odoo')
@@ -85,20 +85,23 @@ def replace_special_char(s):
 
 
 class import_so:
-    def __init__(self, server_ip, server_port, dbname, username, pwd):
+    def __init__(self, server_ip, dbname, username, pwd):
         # Get the uid
         # sock_common = xmlrpc.client.ServerProxy('http://' + server_ip + ':' + server_port + '/common')
-        url = 'http://' + server_ip + ':' + server_port
-        common = xmlrpclib.ServerProxy('{}/xmlrpc/2/common'.format(url))
-        models = xmlrpclib.ServerProxy('{}/xmlrpc/2/object'.format(url))
+        url = 'http://' + server_ip
+        #common = xmlrpc.ServerProxy('{}/xmlrpc/2/common'.format(url))
+        common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
 
-        # db = dbname
-        # username = username
-        # password = pwd
-        self.uid = common.login(dbname, username, pwd)
+        models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+
+        db = dbname
+        username = username
+        password = pwd
+        #self.uid = common.login(dbname, username, pwd)
+        self.uid = common.authenticate(db, username, password, {})
         self.dbname = dbname
         self.pwd = pwd
-        self.models = xmlrpclib.ServerProxy('{}/xmlrpc/2/object'.format(url))
+        self.models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
 
     def do_import_so(self, csv_file):
@@ -158,17 +161,17 @@ def main():
             print(__doc__)
 
             sys.exit(0)
-    if len(args) < 6:
+    if len(args) < 5:
         print(__doc__)
     else:
         server_ip = args[0]
-        server_port = args[1]
-        database = args[2]
-        username = args[3]
-        password = args[4]
-        csvFileName = args[5]
+        #server_port = args[1]
+        database = args[1]
+        username = args[2]
+        password = args[3]
+        csvFileName = args[4]
 
-        ip = import_so(server_ip, server_port, database, username, password)
+        ip = import_so(server_ip, database, username, password)
         ip.do_import_so(csvFileName)
 
 
