@@ -130,7 +130,7 @@ def main():
             print(__doc__)
 
             sys.exit(0)
-    if len(args) < 6:
+    if len(args) < 5:
         print(__doc__)
     else:
         server_ip = args[0]
