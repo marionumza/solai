@@ -86,18 +86,14 @@ def replace_special_char(s):
 
 class import_so:
     def __init__(self, server_ip, dbname, username, pwd):
-        # Get the uid
-        # sock_common = xmlrpc.client.ServerProxy('http://' + server_ip + ':' + server_port + '/common')
-        url = 'http://' + server_ip
-        #common = xmlrpc.ServerProxy('{}/xmlrpc/2/common'.format(url))
-        common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
 
+        url = 'http://' + server_ip
+        common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
         models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
         db = dbname
         username = username
         password = pwd
-        #self.uid = common.login(dbname, username, pwd)
         self.uid = common.authenticate(db, username, password, {})
         self.dbname = dbname
         self.pwd = pwd
@@ -129,7 +125,7 @@ class import_so:
             so_vals = {
                 'name': order_no,
                 'date_order': order_date.isoformat(),
-                'note': amount,
+                #'note': amount,
                 'partner_id': customer_id
             }
             if customer_id:
