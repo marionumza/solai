@@ -1,48 +1,12 @@
 
 import csv
-#import xmlrpclib
-from xmlrpc import client as xmlrpclib
-# import time
+import xmlrpc.client
 import sys
-#sys.path.append('/Users/shelton/PycharmProjects/OdooGIT/odoo')
 import getopt
-# import re
-# import time
-# from datetime import datetime
 from itertools import cycle
-#import re
-from re import sub
-from decimal import Decimal
-from datetime import date, datetime
-#import  fields, models
 
-# class OdooMarshaller(xmlrpclib.Marshaller):
-#
-#     """
-#     XMLRPC Marshaller that converts date(time) objects to strings in iso8061 format.
-#     """
-#
-#     dispatch = dict(xmlrpclib.Marshaller.dispatch)
-#
-#     def dump_datetime(self, value, write):
-#         # override to marshall as a string for backwards compatibility
-#         value = Datetime.to_string(value)
-#         self.dump_unicode(value, write)
-#     dispatch[datetime] = dump_datetime
-#
-#     def dump_date(self, value, write):
-#         value = Date.to_string(value)
-#         self.dump_unicode(value, write)
-#     dispatch[date] = dump_date
-#
-#     def dump_lazy(self, value, write):
-#         v = value._value
-#         return self.dispatch[type(v)](self, v, write)
-#     dispatch[lazy] = dump_lazy
-#
-#
-# # monkey-patch xmlrpc.client's marshaller
-# xmlrpclib.Marshaller = OdooMarshaller
+from datetime import date, datetime
+
 
 class ProgressBar(object):
     """Visualize a status bar on the console."""
@@ -85,20 +49,18 @@ def replace_special_char(s):
 
 
 class import_so:
-    def __init__(self, server_ip, server_port, dbname, username, pwd):
-        # Get the uid
-        # sock_common = xmlrpc.client.ServerProxy('http://' + server_ip + ':' + server_port + '/common')
-        url = 'http://' + server_ip + ':' + server_port
-        common = xmlrpclib.ServerProxy('{}/xmlrpc/2/common'.format(url))
-        models = xmlrpclib.ServerProxy('{}/xmlrpc/2/object'.format(url))
+    def __init__(self, server_ip, dbname, username, pwd):
+        url = 'http://' + server_ip
+        common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+        models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
-        # db = dbname
-        # username = username
-        # password = pwd
-        self.uid = common.login(dbname, username, pwd)
+        db = dbname
+        username = username
+        password = pwd
+        self.uid = common.authenticate(db, username, password, {})
         self.dbname = dbname
         self.pwd = pwd
-        self.models = xmlrpclib.ServerProxy('{}/xmlrpc/2/object'.format(url))
+        self.models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
 
     def do_import_so(self, csv_file):
@@ -134,13 +96,9 @@ class import_so:
                 order_no = so and so[0] and so[0]['id']
                 order_date = datetime.strptime(row['Date'].strip(), '%m/%d/%Y').date()
                 so_line_vals = {
-                    #'name': ,
                     'product_id':product_id,
                     'order_id': order_no,
-                    #'journal_id': inv_journal and inv_journal[0] and inv_journal[0]['id'],
-                    #'partner_id': customer_id,
                     'product_uom_qty': qty,
-                    #'price_unit': float(row['Amount'].strip().replace(',', '')),
 
                 }
                 if price_unit != 0:
@@ -148,25 +106,6 @@ class import_so:
 
                 #print(so_line_vals, '#'*20)
                 self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order.line', 'create', so_line_vals)
-
-            # #print(invoice_vals)
-            # inv_id = self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'search_read',
-            #                                   [['name', '=', row['Num'].strip()]])
-            # invoice_id = inv_id and inv_id[0] and inv_id[0]['id']
-            # #print(invoice_id,'iiiii')
-            # if inv_id:
-            #     invoice_line_vals = {
-            #         'name': line_name,
-            #         'move_id': inv_id and inv_id[0] and inv_id[0]['id'],
-            #         'price_unit': float(amount),
-            #         'quantity': float(qty),
-            #         'account_id':19
-            #
-            #     }
-            #     self.models.execute(self.dbname, self.uid, self.pwd, 'account.move.line', 'create', invoice_line_vals)
-
-
-
 
             sb.update(count * 100.00 / total_lines, count, total_lines)
             count += 1
@@ -195,13 +134,13 @@ def main():
         print(__doc__)
     else:
         server_ip = args[0]
-        server_port = args[1]
-        database = args[2]
-        username = args[3]
-        password = args[4]
-        csvFileName = args[5]
+        # server_port = args[1]
+        database = args[1]
+        username = args[2]
+        password = args[3]
+        csvFileName = args[4]
 
-        ip = import_so(server_ip, server_port, database, username, password)
+        ip = import_so(server_ip, database, username, password)
         ip.do_import_so(csvFileName)
 
 
