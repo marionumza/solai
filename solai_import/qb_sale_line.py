@@ -78,18 +78,18 @@ class import_so:
                                     [['name', '=', row['Product'].strip()],['active', '=', False]])
             product_id = product and product[0] and product[0]['id']
             price_unit = 0
-            if product and product[0] and product[0]['name'] == 'Discount' or product and product[0] and product[0]['name'] == 'Install':
-                price_unit = float(row['Amount'].strip().replace(',', ''))
+            #if product and product[0] and product[0]['name'] == 'Discount' or product and product[0] and product[0]['name'] == 'Install':
+             #   price_unit = float(row['Amount'].strip().replace(',', ''))
 
             if not product:
                 product_vals = {'name': row['Product'].strip(), 'active': False}
                 product_id = self.models.execute(self.dbname, self.uid, self.pwd, 'product.template', 'create', product_vals)
                 print("Created new product ****************", product_id)
             if so and product_id:
-                try:
-                    qty = float(row['Qty'].strip().replace(',', ''))
-                except ValueError:
-                    qty = 1.0
+                # try:
+                #     qty = float(row['Qty'].strip().replace(',', ''))
+                # except ValueError:
+                #     qty = 1.0
 
 
 
@@ -98,11 +98,12 @@ class import_so:
                 so_line_vals = {
                     'product_id':product_id,
                     'order_id': order_no,
-                    'product_uom_qty': qty,
+                    'product_uom_qty': 1,
+                    'price_unit': float(row['Amount'].strip().replace(',', ''))
 
                 }
-                if price_unit != 0:
-                    so_line_vals.update({'price_unit': price_unit})
+                #if price_unit != 0:
+                 #     so_line_vals.update({'price_unit': price_unit})
 
                 #print(so_line_vals, '#'*20)
                 self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order.line', 'create', so_line_vals)
