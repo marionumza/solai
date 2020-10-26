@@ -1,5 +1,4 @@
-	"Customer","Num","Date","Due Date","Aging","Amount","Open Balance"
-,,,,,,
+"Customer","Num","Date","Due Date","Aging","Amount","Open Balance"
 "Andy Hanson","37","06/27/2019","06/27/2019",,2980.20,""
 "Andy Michelson","101","05/06/2020","10/01/2020",,7996.56,""
 "Anita and Alan Boucher","115","06/29/2020","08/29/2020",,7900.02,""
@@ -128,4 +127,3 @@
 "Timothy Schlichter","92","04/27/2020","06/08/2020","129",6911.67,3761.67
 "Valarie Heriloom Gardens","7","02/06/2019","02/06/2019",,7563.84,""
 "Valarie Heriloom Gardens",,"03/11/2019","03/11/2019",,0.23,""
-"Total",,,,,675787.82,89034.25

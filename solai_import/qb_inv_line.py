@@ -108,45 +108,75 @@ class import_so:
         count = 2
 
         for row in csvReader:
-            #print(row)
-            if row['Customer']!='':
-                customer_id = False
-                customer = self.models.execute(self.dbname, self.uid, self.pwd, 'res.partner', 'search_read',
-                                        [['name', '=ilike', row['Customer']]])
+            customer_id = False
+            customer = self.models.execute(self.dbname, self.uid, self.pwd, 'res.partner', 'search_read',
+                                    [['name', '=ilike', row['Customer']]])
+            if customer:
+                customer_id = customer and customer[0] and customer[0]['id']
+            else:
+                #cust_vals = {'name': row['Customer']}
+                #customer_id = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order', 'create', cust_vals)
+                print("Invalid Customer.........................................", row['Customer'])
 
+            inv_no = row['Num'].strip()
+            inv_id = self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'search_read',
+                                           [['name', '=', inv_no]])
+            invoice_id = inv_id and inv_id[0] and inv_id[0]['id']
+            inv_date = datetime.strptime(row['Date'].strip(), '%m/%d/%Y').date()
+            amount = row['Amount'].strip()
+            #line_name = row['Memo'].strip()
+            # invoice_line_vals = {
+            #     'name': line_name,
+            #     'move_id': inv_no,
+            #     'price_unit': float(amount),
+            #     'quantity': 1,
+            #     'account_id': 19
+            #
+            # }
+            invoice_amt = inv_id and inv_id[0] and inv_id[0]['ref'] or 0
+            total_amount = float(invoice_amt)
+            tax_amount = 0
+            print( invoice_id, amount,invoice_amt,tax_amount)
+            if customer_id:
+                l1 = self.models.execute_kw(self.dbname, self.uid, self.pwd, 'account.move.line', 'create',
 
-                if customer:
-                    customer_id = customer and customer[0] and customer[0]['id']
-                else:
-                    #cust_vals = {'name': row['Customer']}
-                    #customer_id = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order', 'create', cust_vals)
-                    print("Invalid Customer.........................................", row['Customer'])
+                                       [{
 
-                order_no = 'EST'+row['Num'].strip()
-                order_date = datetime.strptime(row['Date'].strip(), '%m/%d/%Y').date()
-                amount = row['Amount'].strip()
-                est = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order', 'search_read',
-                                        [['name', '=', order_no]])
-                est_product = self.models.execute(self.dbname, self.uid, self.pwd, 'product.template', 'search_read',
-                                                  [['name', '=', 'Estimate Total'],['active', '=', False]])
-                so_line_vals = {
-                    'product_id': est_product and est_product[0] and est_product[0]['id'],
-                    'order_id': est and est[0] and est[0]['id'],
-                    'product_uom_qty': 1,
-                    'price_unit': float(row['Amount'].strip().replace(',', ''))
+                                           'move_id': invoice_id,
 
-                }
-                #   print(so_line_vals)
-                if customer_id:
-                    est_id = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order.line', 'create', so_line_vals)
-                    # so_line_vals = {
-                    #     'product_id':est_product and est_product[0] and est_product[0]['id'],
-                    #     'order_id': est_id,
-                    #     'product_uom_qty': 1,
-                    #     'price_unit': float(row['Amount'].strip().replace(',', ''))
-                    # }
-                    # self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order.line', 'create', so_line_vals)
+                                           'account_id': 6,  # Receivables
+                                           #'price_unit': total_amount,
+                                            'exclude_from_invoice_tab': True,
+                                           'debit': total_amount,
+                                           'name': 'Invoice Total'
 
+                                       }], {'context': {'check_move_validity': False}})
+
+                l2 = self.models.execute_kw(self.dbname, self.uid, self.pwd, 'account.move.line', 'create',
+
+                                       [{'move_id': invoice_id,
+
+                                         'account_id': 19,  # Revenue
+                                         #'price_unit': total_amount,
+
+                                         'credit': total_amount,
+                                         'name': 'Product Sales'
+
+                                         }], {'context': {'check_move_validity': False}})
+
+                l3 = self.models.execute_kw(self.dbname, self.uid, self.pwd, 'account.move.line', 'create',
+
+                                       [{'move_id': invoice_id,
+
+                                         'account_id': 19,  # Tax
+
+                                         'credit': tax_amount,
+                                         #'price_unit': tax_amount,
+
+                                         'name': 'Tax',
+
+                                         }], {'context': {'check_move_validity': True}})
+                #self.models.execute(self.dbname, self.uid, self.pwd, 'account.move.line', 'create', invoice_line_vals, {'context' :{'check_move_validity': False}})
 
 
 

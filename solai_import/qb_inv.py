@@ -108,45 +108,30 @@ class import_so:
         count = 2
 
         for row in csvReader:
-            #print(row)
-            if row['Customer']!='':
-                customer_id = False
-                customer = self.models.execute(self.dbname, self.uid, self.pwd, 'res.partner', 'search_read',
-                                        [['name', '=ilike', row['Customer']]])
+            customer_id = False
+            customer = self.models.execute(self.dbname, self.uid, self.pwd, 'res.partner', 'search_read',
+                                    [['name', '=ilike', row['Customer']]])
+            if customer:
+                customer_id = customer and customer[0] and customer[0]['id']
+            else:
+                #cust_vals = {'name': row['Customer']}
+                #customer_id = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order', 'create', cust_vals)
+                print("Invalid Customer.........................................", row['Customer'])
 
-
-                if customer:
-                    customer_id = customer and customer[0] and customer[0]['id']
-                else:
-                    #cust_vals = {'name': row['Customer']}
-                    #customer_id = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order', 'create', cust_vals)
-                    print("Invalid Customer.........................................", row['Customer'])
-
-                order_no = 'EST'+row['Num'].strip()
-                order_date = datetime.strptime(row['Date'].strip(), '%m/%d/%Y').date()
-                amount = row['Amount'].strip()
-                est = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order', 'search_read',
-                                        [['name', '=', order_no]])
-                est_product = self.models.execute(self.dbname, self.uid, self.pwd, 'product.template', 'search_read',
-                                                  [['name', '=', 'Estimate Total'],['active', '=', False]])
-                so_line_vals = {
-                    'product_id': est_product and est_product[0] and est_product[0]['id'],
-                    'order_id': est and est[0] and est[0]['id'],
-                    'product_uom_qty': 1,
-                    'price_unit': float(row['Amount'].strip().replace(',', ''))
-
-                }
-                #   print(so_line_vals)
-                if customer_id:
-                    est_id = self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order.line', 'create', so_line_vals)
-                    # so_line_vals = {
-                    #     'product_id':est_product and est_product[0] and est_product[0]['id'],
-                    #     'order_id': est_id,
-                    #     'product_uom_qty': 1,
-                    #     'price_unit': float(row['Amount'].strip().replace(',', ''))
-                    # }
-                    # self.models.execute(self.dbname, self.uid, self.pwd, 'sale.order.line', 'create', so_line_vals)
-
+            inv_no = row['Num'].strip()
+            inv_date = datetime.strptime(row['Date'].strip(), '%m/%d/%Y').date()
+            amount = row['Amount'].strip()
+            inv_vals = {
+                'name': inv_no,
+                'invoice_date': inv_date.isoformat(),
+                #'note': amount,
+                'partner_id': customer_id,
+                'type': 'out_invoice',
+                'ref': amount,
+                'journal_id': 1
+            }
+            if customer_id:
+                self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'create', inv_vals)
 
 
 
