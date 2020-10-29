@@ -25,7 +25,7 @@
                                         <form action="/file-upload" class="dropzone" id="dropzone-products-checkout">
                                             <div class="dz-message" style="padding-top:35px;">
                                                 <span class="title_p">
-                                                    Drag and drop or Upload images/pdf here.
+                                                    Drag and drop or Upload images/pdf here (Optional).
                                                 </span>
                                             </div>
                                             <input type="file" name="file" id="uploadfile" />
