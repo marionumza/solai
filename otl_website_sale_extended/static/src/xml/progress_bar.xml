@@ -18,7 +18,7 @@
                           <div id="wizard-step10" t-att-class="'progress-wizard-step %s' % (step == 15 and 'active' or step&gt;15 and 'complete' or 'disabled')">
                             <div class="progress-wizard-bar d-none d-md-block"/>
                             <span class="progress-wizard-dot d-none d-md-inline-block"></span>
-                            <div class="text-center progress-wizard-steplabel">Upload Files</div>
+                            <div class="text-center progress-wizard-steplabel">Upload Files(Optional)</div>
                           </div>
                         </a>
                         <a class="no-decoration" t-att-href="step&gt;=20 and '/shop/checkout' or '#'">
