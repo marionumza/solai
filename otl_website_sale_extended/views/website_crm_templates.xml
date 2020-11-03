@@ -25,7 +25,7 @@
                         </div>
                         <input type="file" name="file" id="uploadfile" />
                         <input type="hidden" name="send_mail_from_contactus" t-att-value="1" id="send_mail_from_contactus" />
-                        <input type="hidden" name="contactus_token" t-att-value="contactus_token" id="contactus_token" />
+                        <!--input type="hidden" name="contactus_token" t-att-value="contactus_token" id="contactus_token" /-->
                     </div>
                 </div>
                 <div id="contactus_file_count_validation" class="row d-none" style="color:red;padding: 15px 30px;">
