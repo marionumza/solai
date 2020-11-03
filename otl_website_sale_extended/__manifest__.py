@@ -11,7 +11,9 @@
         'views/assets.xml',
         'static/src/xml/website_sale_file_upload.xml',
         'static/src/xml/progress_bar.xml',
-        'views/sale.xml'
+        'views/sale.xml',
+        'data/website_data.xml',
+        'views/website_crm_templates.xml'
     ],
     'installable': True,
     'application': True,
