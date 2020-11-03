@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_forum_assets_frontend" inherit_id="website.assets_frontend" name="Webforum gallery"
+              active="True">
+        <xpath expr="." position="inside">
+
+            <!--        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>-->
+            <!--            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>-->
+            <!--            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"/>-->
+            <script type="text/javascript"
+                    src="/otl_elastic_popup_gallery/static/lib/fancybox/lib/jquery.mousewheel.pack.js"></script>
+            <link rel="stylesheet" href="/otl_elastic_popup_gallery/static/lib/fancybox/source/jquery.fancybox.css"
+                  type="text/css"/>
+            <script type="text/javascript"
+                    src="/otl_elastic_popup_gallery/static/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+            <link rel="stylesheet"
+                  href="/otl_elastic_popup_gallery/static/lib/fancybox/source/helpers/jquery.fancybox-buttons.css"
+                  type="text/css"/>
+            <script type="text/javascript"
+                    src="/otl_elastic_popup_gallery/static/lib/fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
+            <script type="text/javascript"
+                    src="/otl_elastic_popup_gallery/static/lib/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+            <link rel="stylesheet"
+                  href="/otl_elastic_popup_gallery/static/lib/fancybox/source/helpers/jquery.fancybox-thumbs.css"
+                  type="text/css"/>
+            <script type="text/javascript"
+                    src="/otl_elastic_popup_gallery/static/lib/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+            <script type="text/javascript" src="/otl_elastic_popup_gallery/static/src/js/fancy_box.js"/>
+            <link rel="stylesheet" href="/otl_elastic_popup_gallery/static/src/css/style.css"/>
+
+        </xpath>
+    </template>
+
+        <template id="theme_ultimate_snippet_blocks_list_1" inherit_id="business_snippet_blocks_core.theme_ultimate_snippet_blocks_list"
+              name="Theme Ultimate Snippets List">
+        <xpath expr="//div[@id='o_panel_body']" position="inside">
+            <t t-snippet="otl_elastic_popup_gallery.elastic_popup"
+                       t-thumbnail="/otl_elastic_popup_gallery/static/img/snippet-icons/elastic_popup.png"/>
+        </xpath>
+        </template>
+</odoo>
