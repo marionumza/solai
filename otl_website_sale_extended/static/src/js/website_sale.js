@@ -7,6 +7,13 @@ var myDropzoneOptions = {
     acceptedFiles: 'image/*, .pdf, , .PDF'
 }
 
+var myDropzoneContactUsOptions = {
+    addRemoveLinks: true,
+    url: "/contactus-file-upload",
+    maxFiles: 5,
+    acceptedFiles: 'image/*, .pdf, , .PDF'
+}
+
 
 $(document).ready(function() {
 
@@ -50,20 +57,23 @@ $(document).ready(function() {
 
         fileuploadDropzone.on("removedfile", function(file) {
             $("#file_count_validation").addClass('d-none');
-            $("#wrong_files").addClass('d-none');
+            // $("#wrong_files").addClass('d-none');
             $.ajax("/remove/file/" + file.serverID, {
                 type: 'POST',
                 dataType: 'json',
                 success: function(data) {
-                    file_cntr = parseInt($('#file_count').val());
-                    file_cntr--;
-                    $('#file_count').val(file_cntr);
-                    if (file_cntr == 0) {
-                        $('.dz-message').removeClass('d-none');
+                    if (data['result']) {
+                        file_cntr = parseInt($('#file_count').val());
+                        file_cntr--;
+                        $('#file_count').val(file_cntr);
+                        if (file_cntr == 0) {
+                            $('.dz-message').removeClass('d-none');
+                        }
+                        else{
+                            $('.dz-message').addClass('d-none');
+                        }
                     }
-                    else{
-                        $('.dz-message').addClass('d-none');    
-                    }
+
                 },
                 error: function(error) {
                     console.log(error)
@@ -111,6 +121,73 @@ $(document).ready(function() {
             }
         });
      
+    }
+
+
+    if ($("#dropzone-contactus").length) {
+        var file_cntr = 0;
+        var fileuploadContactusDropzone = new Dropzone("div#dropzone-contactus", myDropzoneContactUsOptions);
+
+
+        fileuploadContactusDropzone.on("removedfile", function(file) {
+            $.ajax("/remove/contactusfile/" + file.serverID, {
+                type: 'POST',
+                dataType: 'json',
+                success: function(data) {
+                    if (data['result']){
+                        file_cntr--;
+                    }
+                },
+                error: function(error) {
+                    console.log(error)
+                }
+            });
+
+        });
+
+        fileuploadContactusDropzone.on("error", function(file) {
+            setTimeout(function() {
+                fileuploadContactusDropzone.removeFile(file);
+            }, 0);
+
+            $("#contactus_wrong_files").removeClass('d-none');
+            $("#contactus_file_count_validation").addClass('d-none');
+
+        });
+
+        fileuploadContactusDropzone.on("maxfilesexceeded", function(file) {
+            $("#contactus_file_count_validation").removeClass('d-none');
+
+        });
+
+
+        fileuploadContactusDropzone.on("success", function(file, response) {
+            file.serverID = response
+            $("#contactus_wrong_files").addClass('d-none');
+            $("#contactus_file_count_validation").addClass('d-none');
+            var dict = {
+                'token': $('#contactus_token').val(),
+                'attachment_id':file.serverID
+            }
+            file_cntr++;
+
+            if (file_cntr > 5 ){
+                fileuploadContactusDropzone.removeFile(file);
+                $("#contactus_file_count_validation").removeClass('d-none');
+            }
+
+            new_dict = JSON.stringify(dict);
+            $.ajax("/update/contactustoken/" + new_dict, {
+                type: 'POST',
+                dataType: 'json',
+                success: function(data) {
+                },
+                error: function(error) {
+                    console.log(error)
+                }
+            });
+        });
+
     }
 
 });

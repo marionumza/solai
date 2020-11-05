@@ -7,6 +7,15 @@ import os
 import base64
 import json
 import ast
+from odoo.addons.website_form.controllers.main import WebsiteForm
+
+try:
+    from secrets import token_hex
+except ImportError:
+    from os import urandom
+
+    def token_hex(nbytes=None):
+        return urandom(nbytes).hex()
 
 
 class WebsiteSale(WebsiteSale):
@@ -75,7 +84,8 @@ class WebsiteSale(WebsiteSale):
             if image:
                 image.attachment_id.unlink()
                 image.unlink()
-        return json.dumps({'result':True})
+            return json.dumps({'result':True})
+        return json.dumps({'result':False})
 
     @http.route(['/GetUploadedImages'], type='http', auth="public", website=True, csrf=False)
     def render_uploaded_images(self, **kw):
@@ -93,7 +103,6 @@ class WebsiteSale(WebsiteSale):
                     images.append((
                         image.file_name or 'Attachment',image.id,url))
         result['images'] = images
-        _logger.info(result)
         return json.dumps(result)
 
     @http.route(['/shop/upload/images'], type='http', methods=['GET', 'POST'], auth="public", website=True, sitemap=False)
@@ -107,3 +116,74 @@ class WebsiteSale(WebsiteSale):
         if kw.get('express',0):
             values.update({'express':1})
         return request.render("otl_website_sale_extended.file_upload_products_checkout", values)
+
+
+class ContactController(WebsiteForm):
+
+    @http.route(['/contactus'], type='http', auth='public', website=True)
+    def render_contactus(self, **kwargs):
+        values = {}
+        values.update({
+            'contactus_token':token_hex(32)
+            })
+        return http.request.render('website.contactus', values)
+
+    @http.route('/website_form/<string:model_name>', type='http', auth="public", methods=['POST'], website=True)
+    def website_form(self, model_name, **kwargs):
+        if kwargs.get('send_mail_from_contactus',False):
+            model_name = 'mail.mail'
+        return super(ContactController, self).website_form(model_name, **kwargs)
+
+
+    def extract_data(self, model, values):
+        send_mail_from_contactus = False
+        contactus_token = ''
+        if values.get('send_mail_from_contactus',False):
+            send_mail_from_contactus = True
+            values.pop('send_mail_from_contactus')
+        if values.get('contactus_token',False):
+            contactus_token = values['contactus_token']
+            values.pop('contactus_token')
+        data = super(ContactController, self).extract_data(model, values)
+        attachment_ids = []
+        if send_mail_from_contactus and contactus_token:
+            attachments = request.env['ir.attachment'].sudo().search([('contactus_token','=',contactus_token)])
+            for attachment in attachments:
+                attachment_ids.append(attachment.sudo().id)
+            data['record']['attachment_ids'] = attachment_ids
+        return data
+
+    @http.route('/contactus-file-upload', type='http', auth="public", methods=['POST'], website=True, csrf=False)
+    def validate_contactus_file_upload(self, **kw):
+        attachment_id = False
+        if kw.get('file', False):
+            file = kw['file']
+            file_name = os.path.splitext(file.filename)
+            file_binary = base64.encodestring(kw['file'].read())
+            Attachment = request.env['ir.attachment'].sudo().create({
+                'name':file.filename,
+                'datas':file_binary,
+                })
+            attachment_id = Attachment.id
+        return json.dumps(attachment_id)
+
+    @http.route(['/update/contactustoken/<att_dict>'], type='http', auth="public", website=True, csrf=False)
+    def render_update_token(self, att_dict, **kw):
+        values = ast.literal_eval(att_dict)
+        attachment_id = values.get('attachment_id',False)
+        token = values.get('token',False)
+        if attachment_id and attachment_id != 'undefined' and token:
+            attachment = request.env['ir.attachment'].sudo().search([('id','=',int(attachment_id))])
+            if attachment:
+                attachment.sudo().write({'contactus_token':token})
+        return json.dumps({'result':True})
+
+
+    @http.route(['/remove/contactusfile/<attachment_id>'], type='http', auth="public", website=True, csrf=False)
+    def render_remove_contactusfile(self, attachment_id, **kw):
+        if attachment_id and attachment_id != 'undefined':
+            attachment = request.env['ir.attachment'].sudo().search([('id','=',int(attachment_id))])
+            if attachment:
+                attachment.unlink()
+            return json.dumps({'result':True})
+        return json.dumps({'result':False})
