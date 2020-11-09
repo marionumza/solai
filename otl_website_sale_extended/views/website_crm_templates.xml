@@ -11,13 +11,12 @@
                 </div>
             </div>
             <div class="form-group row form-field">
-                <label class="col-lg-3 col-md-4 col-form-label">Upload Files</label>
-                
-            </div>
+                <div class="col-lg-3 col-md-4">
+                    <label class="col-form-label">Upload Files</label>
+                </div>
 
-            <div class="form-group row form-field">
-                <div class="col-lg-10 col-md-10">
-                    <div style="width:100%!important;padding: 50px 0px!important;" class="dropzone" id="dropzone-contactus">
+                <div class="col-lg-7 col-md-8">
+                    <div style="width:100%!important;" class="dropzone" id="dropzone-contactus">
                         <div class="dz-message" style="text-align:center;">
                             <span class="title_p">
                                 Drag and drop or Upload files here.
@@ -27,18 +26,23 @@
                         <input type="hidden" name="send_mail_from_contactus" t-att-value="1" id="send_mail_from_contactus" />
                         <input type="hidden" name="contactus_token" t-att-value="contactus_token" id="contactus_token" />
                     </div>
-                </div>
-                <div id="contactus_file_count_validation" class="row d-none" style="color:red;padding: 15px 30px;">
-                    <p>
-                        You can upload only 5 images.
-                    </p>
-                </div>
-                <div id="contactus_wrong_files" class="row d-none" style="color:red;padding: 15px 30px;">
-                    <p>
-                        You can't upload files of this type.
-                    </p>
+
+                    <div id="contactus_file_count_validation" class="row d-none" style="color:red;padding: 15px 20px;">
+                        <p>
+                            You can upload only 5 images.
+                        </p>
+                    </div>
+                    <div id="contactus_wrong_files" class="row d-none" style="color:red;padding: 15px 20px;">
+                        <p>
+                            You can't upload files of this type.
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- <div class="form-group row form-field"> -->
+
+            <!-- </div> -->
 		</xpath>
 	</template>
 </odoo>
