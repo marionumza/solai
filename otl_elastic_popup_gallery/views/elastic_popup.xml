@@ -1,5 +1,5 @@
 <odoo>
-    <template name="Elastic Popup" id="elastic_popup">
+    <template name="Greenhouse Popup" id="elastic_popup">
         <section class="pt64 pb64" data-visible="grids">
             <div class="container">
                 <div class="row">
