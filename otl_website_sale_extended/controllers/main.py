@@ -153,6 +153,15 @@ class ContactController(WebsiteForm):
             data['record']['attachment_ids'] = attachment_ids
         return data
 
+    def insert_record(self, request, model, values, custom, meta=None):
+        model_name = model.sudo().model
+        if model_name == 'mail.mail':
+            values.update({'subject': 'Inquiry from Modular Greenhouses Website'})
+        record = super(ContactController, self).insert_record(request, model, values, custom, meta)
+        return record
+
+
+
     @http.route('/contactus-file-upload', type='http', auth="public", methods=['POST'], website=True, csrf=False)
     def validate_contactus_file_upload(self, **kw):
         attachment_id = False
