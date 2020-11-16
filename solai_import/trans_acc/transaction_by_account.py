@@ -102,6 +102,8 @@ class import_transaction:
                           '7900 Travel': 1739.94,
                           '8000 Uniforms': 70.33,
                           '8400 Utilities': 10932.55,
+                          '7310 Rubbish Removal': 32.45,
+                          '7700 Interest Expense': 25513.76,
                           }
         for account_name, total in account_totals.items():
             move = self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'search_read',
@@ -136,7 +138,7 @@ class import_transaction:
 
         for row in csvReader:
             if row['Account']:
-
+                #print(row)
                 move = self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'search_read',
                                            [['ref', '=', row['Account']]])
 
