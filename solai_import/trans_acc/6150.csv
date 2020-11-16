@@ -1,0 +1,24 @@
+,,,,,,,Account,Type,,Date,,Num,,Name,,Memo,,Class,,Clr,,Split,,Debit,,Credit,,Balance
+,,,,6150 · Depreciation,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,6150 Depreciation,General Journal,,01/31/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,315.65
+,,,,,,,6150 Depreciation,General Journal,,02/28/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,631.30
+,,,,,,,6150 Depreciation,General Journal,,03/31/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,946.95
+,,,,,,,6150 Depreciation,General Journal,,04/30/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,"1,262.60"
+,,,,,,,6150 Depreciation,General Journal,,05/31/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,"1,578.25"
+,,,,,,,6150 Depreciation,General Journal,,06/30/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,"1,893.90"
+,,,,,,,6150 Depreciation,General Journal,,07/31/2019,,depr,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,"2,209.55"
+,,,,,,,6150 Depreciation,General Journal,,08/31/2019,,7,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,315.65,,,,"2,525.20"
+,,,,,,,6150 Depreciation,General Journal,,09/30/2019,,010119-8sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,337.56,,,,"2,862.76"
+,,,,,,,6150 Depreciation,General Journal,,10/31/2019,,010119-10sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,337.56,,,,"3,200.32"
+,,,,,,,6150 Depreciation,General Journal,,11/30/2019,,010119-11sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,337.56,,,,"3,537.88"
+,,,,,,,6150 Depreciation,General Journal,,12/31/2019,,010119-14sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,337.56,,,,"3,875.44"
+,,,,,,,6150 Depreciation,General Journal,,01/31/2020,,010119-15sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"4,424.81"
+,,,,,,,6150 Depreciation,General Journal,,02/29/2020,,010119-16sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"4,974.18"
+,,,,,,,6150 Depreciation,General Journal,,03/31/2020,,010119-16sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"5,523.55"
+,,,,,,,6150 Depreciation,General Journal,,04/30/2020,,010119-16sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"6,072.92"
+,,,,,,,6150 Depreciation,General Journal,,05/31/2020,,010119-17sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"6,622.29"
+,,,,,,,6150 Depreciation,General Journal,,06/30/2020,,010119-18sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"7,171.66"
+,,,,,,,6150 Depreciation,General Journal,,07/31/2020,,010119-19sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"7,721.03"
+,,,,,,,6150 Depreciation,General Journal,,08/31/2020,,010119-20sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"8,270.40"
+,,,,,,,6150 Depreciation,General Journal,,09/30/2020,,010119-32sc,,,,to record monthly depr,,,,,,1850 · Accumulated Depreciation,,549.37,,,,"8,819.77"
+,,,,Total 6150 · Depreciation,,,,,,,,,,,,,,,,,,,,"8,819.77",,0.00,,"8,819.77"
