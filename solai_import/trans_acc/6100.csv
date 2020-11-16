@@ -1,0 +1,121 @@
+,,,,,,,Account,Type,,Date,,Num,,Name,,Memo,,Class,,Clr,,Split,,Debit,,Credit,,Balance
+,,,,6100 · Bank & Merchant Charges,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/31/2000,,,,,,Service Charge,,,,,,1010 · Chase 9063 -720,,104.95,,,,104.95
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/29/2000,,,,,,Service Charge,,,,,,1010 · Chase 9063 -720,,104.95,,,,209.90
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,01/02/2019,,,,,,square fees,,,,,,1200 · Checking BOA 6959 MG,,89.91,,,,299.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/14/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,334.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/14/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,369.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/15/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,404.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/15/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,439.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/15/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,474.81
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,01/15/2019,,,,BANK FEE,,Deposit,,,,,,1200 · Checking BOA 6959 MG,,,,35.00,,439.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/16/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,474.81
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,01/16/2019,,,,BANK FEE,,Deposit,,,,,,1200 · Checking BOA 6959 MG,,,,35.00,,439.81
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,01/17/2019,,,,BANK FEE,,Deposit,,,,,,1200 · Checking BOA 6959 MG,,,,175.00,,264.81
+,,,,,,,6100 Bank & Merchant Charges,Credit Card Charge,,01/17/2019,,,,WP Holdings,,"to true up transferred balance from MG, SR",,,,,,1420 · Capital One,,26.00,,,,290.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/04/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,295.81
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/04/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,37.88,,,,333.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/06/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,338.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/08/2019,,,,SQUARE INC,,,,,,,,1000 · Checking BOA 2589,,0.01,,,,338.70
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,02/08/2019,,,,SQUARE INC,,,,,,,,1000 · Checking BOA 2589,,,,0.01,,338.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/11/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,373.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/12/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,408.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/13/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,443.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/13/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,478.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/14/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,483.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/15/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,488.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/19/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,35.00,,,,523.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/22/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,30.00,,,,553.69
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/27/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,558.69
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,02/28/2019,,,,BANK FEE,,422142873   CCD ID: 9424300002,,,,,,1010 · Chase 9063 -720,,,,0.97,,557.72
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/04/2019,,,,BANK FEES,,,,,,,,1000 · Checking BOA 2589,,9.95,,,,567.67
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/04/2019,,,,BANK FEE,,,,,,,,1200 · Checking BOA 6959 MG,,25.00,,,,592.67
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/05/2019,,,,BANK FEES,,Linda Campbell - square fees,,,,,,1000 · Checking BOA 2589,,12.70,,,,605.37
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/05/2019,,,,BANK FEE,,70942           ID: 9088871070,,,,,,1010 · Chase 9063 -720,,,,0.01,,605.36
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/12/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,610.36
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/15/2019,,,,BANK FEES,,Gail Willey - square fees,,,,,,1000 · Checking BOA 2589,,6.88,,,,617.24
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/17/2019,,,,BANK FEES,,Richard Hardie - Square Fees,,,,,,1000 · Checking BOA 2589,,6.80,,,,624.04
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/17/2019,,,,BANK FEES,,Laura Wikey - square Fees,,,,,,1000 · Checking BOA 2589,,52.99,,,,677.03
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/17/2019,,,,BANK FEES,,Jessica Stumbaugh - square Fees,,,,,,1000 · Checking BOA 2589,,79.60,,,,756.63
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/17/2019,,,,BANK FEES,,Steven Applewhite - square Fees,,,,,,1000 · Checking BOA 2589,,35.09,,,,791.72
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/18/2019,,,,,,Brad Watega - Square payment,,,,,,1000 · Checking BOA 2589,,48.54,,,,840.26
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/18/2019,,,,,,Mindy Barrett - Square payment,,,,,,1000 · Checking BOA 2589,,20.60,,,,860.86
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/18/2019,,,,,,Dwight Longaker - Square Payment,,,,,,1000 · Checking BOA 2589,,22.28,,,,883.14
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/20/2019,,,,,,Square payment,,,,,,1000 · Checking BOA 2589,,91.64,,,,974.78
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/21/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,979.78
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/22/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,984.78
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/22/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,5.00,,,,989.78
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/26/2019,,,,,,Tami Weber - square fees,,,,,,1000 · Checking BOA 2589,,25.86,,,,"1,015.64"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/26/2019,,,,,,Gail Willey - square payment,,,,,,1000 · Checking BOA 2589,,139.20,,,,"1,154.84"
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/27/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,1.00,,,,"1,155.84"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/27/2019,,,,BANK FEE,,PPD ID: 9424300002,,,,,,1010 · Chase 9063 -720,,,,0.01,,"1,155.83"
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/27/2019,,,,BANK FEE,,106891626   WEB ID: 9424300002,,,,,,1010 · Chase 9063 -720,,0.01,,,,"1,155.84"
+,,,,,,,6100 Bank & Merchant Charges,Check,,04/02/2019,,,,Bank of America,,,,,,,,1000 · Checking BOA 2589,,9.95,,,,"1,165.79"
+,,,,,,,6100 Bank & Merchant Charges,Check,,04/17/2019,,1299,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,200.79"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/29/2019,,,,,,Deposit,,,,,,1200 · Checking BOA 6959 MG,,10.42,,,,"1,211.21"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/30/2019,,Square,,,,Square Fees,,,,,,1010 · Chase 9063 -720,,90.57,,,,"1,301.78"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/01/2019,,,,BANK FEE,,APRIL,,,,,,1010 · Chase 9063 -720,,145.00,,,,"1,446.78"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/02/2019,,1,,Bank of America,,,,,,,,1000 · Checking BOA 2589,,9.95,,,,"1,456.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/16/2019,,1314,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,491.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/16/2019,,,,ATM CASH WITHDRAWL,,Memo:485785  05/161095 Nort,,,,,,1010 · Chase 9063 -720,,3.00,,,,"1,494.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/21/2019,,1315,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,529.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/21/2019,,1316,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,564.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/24/2019,,1317,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,599.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/28/2019,,1318,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,634.73"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/28/2019,,1319,,BANK FEE,,overdraft,,,,,,1200 · Checking BOA 6959 MG,,35.00,,,,"1,669.73"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/30/2019,,,,,,website charge,,,,,,1200 · Checking BOA 6959 MG,,23.18,,,,"1,692.91"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/30/2019,,,,,,square Fee,,,,,,1010 · Chase 9063 -720,,86.61,,,,"1,779.52"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/31/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,64.95,,,,"1,844.47"
+,,,,,,,6100 Bank & Merchant Charges,Check,,06/03/2019,,,,BANK FEE,,MAY,,,,,,1010 · Chase 9063 -720,,95.00,,,,"1,939.47"
+,,,,,,,6100 Bank & Merchant Charges,Check,,06/03/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,9.95,,,,"1,949.42"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,06/24/2019,,,,,,Deposit,,,,,,1200 · Checking BOA 6959 MG,,23.18,,,,"1,972.60"
+,,,,,,,6100 Bank & Merchant Charges,Check,,06/28/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,59.95,,,,"2,032.55"
+,,,,,,,6100 Bank & Merchant Charges,Check,,07/02/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,9.95,,,,"2,042.50"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,07/25/2019,,,,,,square fees,,,,,,1010 · Chase 9063 -720,,115.21,,,,"2,157.71"
+,,,,,,,6100 Bank & Merchant Charges,Check,,07/31/2019,,,,BANK FEE,,,,,,,,1000 · Checking BOA 2589,,134.95,,,,"2,292.66"
+,,,,,,,6100 Bank & Merchant Charges,Check,,08/01/2019,,,,BANK FEE,,JULY,,,,,,1010 · Chase 9063 -720,,104.95,,,,"2,397.61"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,08/19/2019,,,,,,Deposit,,,,,,1010 · Chase 9063 -720,,22.78,,,,"2,420.39"
+,,,,,,,6100 Bank & Merchant Charges,Check,,08/31/2019,,,,BANK FEE,,,,,,,,1010 · Chase 9063 -720,,104.95,,,,"2,525.34"
+,,,,,,,6100 Bank & Merchant Charges,Check,,08/31/2019,,,,,,Service Charge,,,,,,1000 · Checking BOA 2589,,169.95,,,,"2,695.29"
+,,,,,,,6100 Bank & Merchant Charges,Check,,09/30/2019,,,,,,Service Charge,,,,,,1000 · Checking BOA 2589,,64.95,,,,"2,760.24"
+,,,,,,,6100 Bank & Merchant Charges,Check,,10/01/2019,,,,BANK FEE,,SEPTEMBER,,,,,,1010 · Chase 9063 -720,,104.95,,,,"2,865.19"
+,,,,,,,6100 Bank & Merchant Charges,Check,,11/01/2019,,,,,,VOID: OCTOBER Payee:SERVICE CHARGES FOR THE MONTH OF,,,,Ö,,1010 · Chase 9063 -720,,0.00,,,,"2,865.19"
+,,,,,,,6100 Bank & Merchant Charges,Check,,11/13/2019,,,,,,,,,,,,1010 · Chase 9063 -720,,0.10,,,,"2,865.29"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,11/21/2019,,,,Joshua C Smith,,square fees,,,,,,1010 · Chase 9063 -720,,138.55,,,,"3,003.84"
+,,,,,,,6100 Bank & Merchant Charges,Check,,12/31/2019,,,,,,Service Charge,,,,,,1010 · Chase 9063 -720,,104.95,,,,"3,108.79"
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/02/2020,,,,,,DECEMBER,,,,,,1010 · Chase 9063 -720,,104.95,,,,"3,213.74"
+,,,,,,,6100 Bank & Merchant Charges,Check,,01/31/2020,,,,,,VOID: JANUARY,,,,Ö,,1010 · Chase 9063 -720,,0.00,,,,"3,213.74"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,02/21/2020,,,,,,Deposit Payee:Square Inc       200221P2,,,,,,1010 · Chase 9063 -720,,77.18,,,,"3,290.92"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,02/21/2020,,,,,,Sue & Jim Pinney Square fee,,,,,,1010 · Chase 9063 -720,,77.71,,,,"3,368.63"
+,,,,,,,6100 Bank & Merchant Charges,Check,,02/29/2020,,,,,,Service Charge,,,,,,1010 · Chase 9063 -720,,129.95,,,,"3,498.58"
+,,,,,,,6100 Bank & Merchant Charges,Check,,03/02/2020,,,,BANK FEE,,FEBRUARY,,,,,,1010 · Chase 9063 -720,,129.95,,,,"3,628.53"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/09/2020,,Square,,,,Dention Hathaway square fee,,,,,,1010 · Chase 9063 -720,,77.15,,,,"3,705.68"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,03/09/2020,,Square,,,,Paul Beagley square fee,,,,,,1010 · Chase 9063 -720,,108.65,,,,"3,814.33"
+,,,,,,,6100 Bank & Merchant Charges,Check,,04/01/2020,,,,BANK FEE,,MARCH,,,,,,1010 · Chase 9063 -720,,132.45,,,,"3,946.78"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/07/2020,,,,,,square fees chris vivian,,,,,,1010 · Chase 9063 -720,,87.30,,,,"4,034.08"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/15/2020,,square,,,,Sam Duvall square fees,,,,,,1010 · Chase 9063 -720,,41.75,,,,"4,075.83"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/27/2020,,square,,,,Square Fee,,,,,,1010 · Chase 9063 -720,,64.10,,,,"4,139.93"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/27/2020,,square,,,,Tim Schlichter -square fee,,,,,,1010 · Chase 9063 -720,,91.65,,,,"4,231.58"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,04/28/2020,,web payment,,,,David Ritchie - online stripe fee,,,,,,1010 · Chase 9063 -720,,321.65,,,,"4,553.23"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/01/2020,,,,BANK FEE,,APRIL,,,,,,1010 · Chase 9063 -720,,134.95,,,,"4,688.18"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/11/2020,,,,,,square fees - Kaydee Faulstich,,,,,,1010 · Chase 9063 -720,,26.10,,,,"4,714.28"
+,,,,,,,6100 Bank & Merchant Charges,Check,,05/14/2020,,,,EXPERIAN CREDIT,,40 CA        05/13,,,,,,1010 · Chase 9063 -720,,189.00,,,,"4,903.28"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/29/2020,,,,,,square fees,,,,,,1010 · Chase 9063 -720,,108.97,,,,"5,012.25"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/29/2020,,,,,,square fees,,,,,,1010 · Chase 9063 -720,,84.40,,,,"5,096.65"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/29/2020,,,,,,square fees,,,,,,1010 · Chase 9063 -720,,47.29,,,,"5,143.94"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/29/2020,,,,,,square fees,,,,,,1010 · Chase 9063 -720,,103.06,,,,"5,247.00"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,05/29/2020,,,,,,online stripe fees,,,,,,1010 · Chase 9063 -720,,109.02,,,,"5,356.02"
+,,,,,,,6100 Bank & Merchant Charges,Check,,06/01/2020,,,,Chase Bank,,MAY,,,,,,1010 · Chase 9063 -720,,129.95,,,,"5,485.97"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,06/30/2020,,,,,,Square,,,,,,1010 · Chase 9063 -720,,210.15,,,,"5,696.12"
+,,,,,,,6100 Bank & Merchant Charges,Check,,07/01/2020,,,,BANK FEE,,JUNE,,,,,,1010 · Chase 9063 -720,,129.95,,,,"5,826.07"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,07/07/2020,,,,,,Square fee,,,,,,1010 · Chase 9063 -720,,24.65,,,,"5,850.72"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,07/22/2020,,,,,,online stripe fees,,,,,,1010 · Chase 9063 -720,,130.66,,,,"5,981.38"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,07/30/2020,,,,,,christopher learned -square fees,,,,,,1010 · Chase 9063 -720,,50.07,,,,"6,031.45"
+,,,,,,,6100 Bank & Merchant Charges,Check,,08/03/2020,,,,BANK FEE,,JULY,,,,,,1010 · Chase 9063 -720,,129.95,,,,"6,161.40"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,08/05/2020,,,,,,stripe fees Marcus Boundy,,,,,,1010 · Chase 9063 -720,,172.58,,,,"6,333.98"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,08/05/2020,,,,,,stripe fees Craig Klose,,,,,,1010 · Chase 9063 -720,,105.77,,,,"6,439.75"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,08/14/2020,,,,,,Becky Angeli - square fees,,,,,,1010 · Chase 9063 -720,,80.05,,,,"6,519.80"
+,,,,,,,6100 Bank & Merchant Charges,Check,,09/01/2020,,,,BANK FEE,,AUGUST,,,,,,1010 · Chase 9063 -720,,129.95,,,,"6,649.75"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,09/17/2020,,,,,,Bruce Miller - stripe fees,,,,,,1010 · Chase 9063 -720,,137.08,,,,"6,786.83"
+,,,,,,,6100 Bank & Merchant Charges,Deposit,,09/17/2020,,,,,,Craig Klose - square fees (only 2.9 was charged to client) remainder,,,,,,1010 · Chase 9063 -720,,4.65,,,,"6,791.48"
+,,,,Total 6100 · Bank & Merchant Charges,,,,,,,,,,,,,,,,,,,,"7,037.48",,246.00,,"6,791.48"
