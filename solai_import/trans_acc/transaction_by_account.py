@@ -101,6 +101,7 @@ class import_transaction:
                           '7500 Sub Contractor Expense': 11012.50,
                           '7900 Travel': 1739.94,
                           '8000 Uniforms': 70.33,
+                          '8400 Utilities': 10932.55,
                           }
         for account_name, total in account_totals.items():
             move = self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'search_read',
@@ -135,8 +136,10 @@ class import_transaction:
 
         for row in csvReader:
             if row['Account']:
+
                 move = self.models.execute(self.dbname, self.uid, self.pwd, 'account.move', 'search_read',
                                            [['ref', '=', row['Account']]])
+
                 move_id = move and move[0] and move[0]['id']
                 line_date = datetime.strptime(row['Date'].strip(), '%m/%d/%Y').date()
                 name = row['Name']
