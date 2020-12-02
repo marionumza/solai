@@ -1,0 +1,127 @@
+<odoo>
+
+    <template name="Custom Product" id="custom_product_templ">
+        <title>Customized Product</title>
+        <script src="/web/static/lib/jquery/jquery.js"></script>
+        <link href="https://admin.expivi.net/widgets/assets/v1.433/ExpiviComponent.css" rel="stylesheet"/>
+        <script src="https://admin.expivi.net/widgets/assets/v1.433/vendor.lib.js"></script>
+        <script src="https://admin.expivi.net/widgets/assets/v1.433/index.js"></script>
+        <script src="https://admin.expivi.net/widgets/assets/v1.433/ExpiviComponent.js"></script>
+        <style>
+            .expivi-single-product-container {
+            display: table;
+            height: 100%;
+            width: 100%;
+            }
+            .expivi-single-product-container .expivi-viewer-container {
+            display: table-cell;
+            width: 64%;
+            padding-right: 15px;
+            vertical-align: top;
+            }
+            .expivi-single-product-container .expivi-option-container {
+            height: 100%;
+            display: table-cell;
+            width: 36%;
+            }
+            @media (max-width: 600px) {
+            .expivi-single-product-container {
+            display: block;
+            }
+            .expivi-single-product-container .expivi-viewer-container {
+            height: 40vh;
+            display: block;
+            width: 100%;
+            padding-right: 0;
+            }
+            .expivi-single-product-container .expivi-option-container {
+            height: initial;
+            display: block;
+            width: 100%;
+            }
+            }
+        </style>
+        <script type="text/javascript">
+            window.addEventListener('load', function () {
+            var expiviInstance = new ExpiviComponent.default({
+            catalogueId: 5551,
+            viewerContainer: "#viewerContainer",
+            optionContainer: "#optionsContainer",
+            priceSelectors: "#priceContainer",
+            currency: "EUR",
+            locale: "nl",
+            token:"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI3YTdkNmIwY2RkYzZhMDE3YTIyYmU5OTMyMTZlYjFhMGQ4YmVjM2M1MjQ5M2MyZjhlM2JmM2M3ZjBlNDI2NWRiNThkNThmYzMwM2I1ZmJmIn0.eyJhdWQiOiIxIiwianRpIjoiMjdhN2Q2YjBjZGRjNmEwMTdhMjJiZTk5MzIxNmViMWEwZDhiZWMzYzUyNDkzYzJmOGUzYmYzYzdmMGU0MjY1ZGI1OGQ1OGZjMzAzYjVmYmYiLCJpYXQiOjE2MDU4OTA0MzQsIm5iZiI6MTYwNTg5MDQzNCwiZXhwIjoxOTIxNDIzMjM0LCJzdWIiOiIxNTkzIiwic2NvcGVzIjpbXX0.l6TZq7LVhvAL7c_5WotFJEWONobcF0o6bFl-aUapAiRjoFDliVJwLTEIRF2izzdFCQQZ0iXswIiao7ET0Vh2YLqOqnHTxgRUV_PlM6B3PNFLWQlc-ku5qZLc2OiWc3FaqEFVrncQb2_-8QjP-vVyMwQO_Py-29gJ58uPDJCJl9NZxGiaVR_VhfrILzoXzUD2e2fB0nfKpw1z4HOAkO9ctYJPDSAkvaIZqr_HR-cqfu3RO97efZUi_3-Fu10kc2cr9diAnwegLn1E20OJB7Ru-0pgIPp26Dlg47hvsQWKUtQ-CZqx3Ph6QBYgN7IOEQLNcMYlTZ5d5gQRgws8Pkqckh1FwMskTS28bzFMEyaXi3_4zQiV9_2J7sUvU1giepmJlcG-AQc62LoGipJw6_9tlmjNex7emKCOckUMdy4aHEwztpwkHFhCzRfTr6HLDjD6di6vEVyM9g4moqrCOREkrhSzz8fw87r9m_-jkd0WgfhD0LzG6WeZx7ZDovFi_2OO0cZyrlYAnNDEs95scGRvPoSLhEAZf4X6FyEDJRiBvcGnodAawb4cdZkOFVs0tByVVzLV7MXe1HJsI0hDARegOQ386Lt3R3-dAyIVV9zPNbbBzMkSk51iLBcdtBV6CjCpjNLiHoH85iPrCZ5lc6dWBuVJ8WvOGeA5hSgBgAhyN8g"
+            });
+            });
+            function submit(){
+            var temp;
+              window.expivi.saveConfiguration(256, 256).then(function(aSaveResults)
+            {
+                    temp=aSaveResults;
+                    var new_dict = JSON.stringify(temp);
+               $.ajax("/save/website/expivi_data/", {
+                    type: 'POST',
+                    dataType: 'json',
+                    data:{data:temp},
+                    success: function(data) {
+                    //console.log("Entering");
+            console.log('==================== okeyy ====================')
+
+                    //window.location.href = data['base_url']
+             //window.location.href = 'http://localhost:7000/shop/cart'
+                    },
+                    error: function(error) {
+                    console.log('==================== error ====================')
+                        window.location.href = 'http://localhost:7000/shop/cart'
+                        console.log(error)
+            console.log('==================== error ====================')
+            }
+        });
+            });
+            setTimeout(function()
+            {
+            //alert("Page Refreshing");
+            window.expivi.loadConfiguration(temp).then(function(aSaveResults)
+            {
+                    tem=aSaveResults;
+            });
+            //var Model = require('web.Model');
+            }, 100);
+          }
+
+        </script>
+         <t t-call="website.layout">
+        <section class="pt64 pb64" data-visible="grids">
+            <div class="container">
+                <div class="row" style="width: 100%;height: 100%;margin:0;padding:0">
+                    <div class="expivi-single-product-container">
+                        <div class="col-3">
+<!--                             <t t-call="website_sale.categories_recursive" />-->
+<!--                            <li class="nav-item">-->
+<!--                                <a t-att-href="keep('/shop/category/' + slug(c), category=0)" t-attf-class="nav-link #{'active' if c.id == category.id else ''}">-->
+<!--                                    <span t-field="c.name"/>-->
+<!--                                </a>-->
+<!--                                <ul t-if="c.child_id" class="nav nav-pills flex-column nav-hierarchy">-->
+<!--                                    <t t-foreach="c.child_id" t-as="c">-->
+<!--                                        <t t-if="not search or c.id in search_categories_ids">-->
+<!--                                            <t t-call="website_sale.categories_recursive" />-->
+<!--                                        </t>-->
+<!--                                    </t>-->
+<!--                                </ul>-->
+<!--                             </li>-->
+                        </div>
+                        <div class="expivi-viewer-container">
+                            <div id="viewerContainer" style="position: center;top:0;width:100%;height:50vh;"></div>
+                        </div>
+                        <div class="expivi-option-container">
+                            <div id="priceContainer"></div>
+                            <div id="optionsContainer"></div>
+                            <button class="btn btn-primary" onclick="submit()">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         </t>
+    </template>
+</odoo>

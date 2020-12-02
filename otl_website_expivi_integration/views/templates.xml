@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_sale.products_add_to_cart" inherit_id="website_sale.products_item" active="False"
+              customize_show="True" name="Add to Cart">
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
+            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+            <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+            <t t-if="product_variant_id">
+                <t t-if="product.expivi_catalogueid">
+                    <a href="/configure/website/expivi" role="button" class="btn btn-secondary a-submit" aria-label="Configure Product"
+                       title="Configure Product">
+                        <span class="fa fa-edit"/>
+                    </a>
+                </t>
+                <t t-else="">
+                     <a href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart"
+                       title="Shopping cart">
+                        <span class="fa fa-shopping-cart"/>
+                    </a>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+<!--     <template id="website_sale.products_item" name="Products item">-->
+<!--        <t t-set="product_href" t-value="keep(product.website_url, page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" />-->
+
+<!--        <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>-->
+
+<!--        <form action="/shop/cart/update" method="post" class="card oe_product_cart"-->
+<!--            t-att-data-publish="product.website_published and 'on' or 'off'"-->
+<!--            itemscope="itemscope" itemtype="http://schema.org/Product">-->
+<!--            <div class="card-body p-1 oe_product_image">-->
+<!--                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />-->
+<!--                <div class="ribbon-wrapper">-->
+<!--                    <a href="#" role="button" class="ribbon btn btn-danger">Sale</a>-->
+<!--                </div>-->
+<!--                <a t-att-href="/configure/website/expivi" class="d-block h-100" itemprop="url">-->
+<!--                    <span t-field="product.image_1920"-->
+<!--                        t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"-->
+<!--                        class="d-flex h-100 justify-content-center align-items-center"/>-->
+<!--                </a>-->
+<!--                  <t t-esc="product_href"/>-->
+<!--            </div>-->
+<!--            <div class="card-body p-0 text-center o_wsale_product_information">-->
+<!--                <div class="p-2 o_wsale_product_information_text">-->
+<!--                    <h6 class="o_wsale_products_item_title">-->
+<!--                        <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" />-->
+<!--                        <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>-->
+<!--                    </h6>-->
+<!--                    <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">-->
+<!--                        <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />-->
+<!--                        <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>-->
+<!--                        <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />-->
+<!--                        <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="o_wsale_product_btn"/>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </template>-->
+</odoo>

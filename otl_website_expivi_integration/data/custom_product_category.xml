@@ -1,0 +1,8 @@
+<odoo>
+ <data>
+        <record id="custom_product_" model="product.public.category">
+            <field name="name">Customize Product</field>
+            <field name="sequence">2</field>
+        </record>
+ </data>
+</odoo>
