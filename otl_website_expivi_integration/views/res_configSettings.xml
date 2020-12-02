@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_views_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.website.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <div id="webmaster_settings" position="after">
+                    <h2>Expivi Configuration</h2>
+                   <div class="row mt16 o_settings_container" id="expivi_settings">
+                    <div class="col-12 col-lg-6 o_setting_box" id="website_expivi_setting">
+                        <div class="o_setting_right_pane">
+                            <label string="Expivi token" for="expivi_token"/>
+                            <div class="text-muted">
+                                Expivi Api Configuration token
+                            </div>
+                            <div class="mt16">
+                                     <field name="expivi_token" class="oe_inline"/>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

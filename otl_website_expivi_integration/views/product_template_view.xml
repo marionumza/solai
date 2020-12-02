@@ -1,0 +1,39 @@
+
+<odoo>
+    <record id="view_product_temp_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="expivi_catalogueid"/>
+            </field>
+        </field>
+    </record>
+
+     <record id="sale_order_form_inherited_view" model="ir.ui.view">
+        <field name="name">sale.order.form.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='customer_signature']" position="after">
+                <page name="extra_component" string="Extra Components">
+                        <field name="extracomponent_ids" nolabel="1" invsible="1">
+                            <tree>
+                                <field name="name"/>
+                                <field name="price"/>
+                                <field name="quantity"/>
+                                <field name="order_id" invsible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+
+            </xpath>
+            <xpath expr="//notebook/page[@name='order_lines']/field/tree/field[@name='name']" position='after'>
+          <field name="main_product_id" readonly="1"/>
+          <field name="expivi_configuration" readonly="1"/>
+        </xpath>
+
+        </field>
+    </record>
+</odoo>
