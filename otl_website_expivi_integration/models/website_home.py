@@ -46,7 +46,7 @@ class Website(Home):
             price=[]
             configuration=kwargs
             main_product_id=[]
-            for product in request.env['product.product'].search([('product_template_attribute_value_ids','=',domain)]):
+            for product in request.env['product.product'].search([('product_template_attribute_value_ids','in',domain)]):
                 if product.product_template_attribute_value_ids and product.product_template_attribute_value_ids.ids==domain:
                     product_id.append(product.id)
                     price.append(kwargs.get('data[configured_products][0][price][base]',0))
@@ -80,7 +80,7 @@ class Website(Home):
                           'discount': 0,
                           'customer_lead': 0.0}
                     order_line = SaleOrderLineSudo.create(vale)
-        return request.env['ir.config_parameter'].get_param('web.base.url')+'/shop/cart'
+        return json.dumps({'url': request.env['ir.config_parameter'].get_param('web.base.url')+'/shop/cart'})
 
 from odoo.addons.website.models.ir_http import sitemap_qs2dom
 from odoo.addons.http_routing.models.ir_http import slug
@@ -151,8 +151,8 @@ class WebsiteSale(WebsiteSale):
     ], type='http', auth="public", website=True, sitemap=sitemap_shop)
     def shop(self, page=0, category=None, search='', ppg=False, **post):
         add_qty = int(post.get('add_qty', 1))
-        if category and request.env.ref('website_form_custom_product.custom_product_').id ==category.id:
-            return request.render('website_form_custom_product.custom_product_templ')
+        # if category and request.env.ref('otl_website_expivi_integration.custom_product_').id ==category.id:
+        #     return request.render('website_form_custom_product.custom_product_templ')
         Category = request.env['product.public.category']
         if category:
             category = Category.search([('id', '=', int(category))], limit=1)
